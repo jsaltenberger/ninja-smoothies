@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import firestore from 'firebase/firestore';
   
   // Initialize Firebase
   var config = {
@@ -10,6 +9,8 @@ import firestore from 'firebase/firestore';
     storageBucket: "ninja-smoothies-1ae53.appspot.com",
     messagingSenderId: "207047587401"
   };
+  
   const firebaseApp = firebase.initializeApp(config);
+  firebaseApp.firestore().settings({ timestampsInSnapshots: true });
 
   export default firebaseApp.firestore();
